@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import 'aos/dist/aos.css';
 import { NextPage } from 'next';
 import { ThemeProvider } from 'next-themes';
+import Loader from '../components/loader/preloader';
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 
@@ -45,7 +46,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <div>
-      {loading ? <div>loading...</div> : (
+      {loading ? (<Loader />) : (
         <ThemeProvider attribute='class'>
           {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>
