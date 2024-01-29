@@ -24,18 +24,11 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
-      backgroundImage: {
-        'about': "url('/assets/img/banner_images/about_img.jpg')",
-        'ourteams':"url('/assets/img/banner_images/teams_img.png')",
-        'service':"url('/assets/img/banner_images/services_img.jpg')",
-        'carrers':"url('/assets/img/banner_images/careers_img.jpg')",
-        'contact':"url('/assets/img/banner_images/contact_img.jpg')",
-        'blog':"url('/assets/img/banner_images/blog_img.jpg')",
-      },
       colors:{
-        'primary' : "#6fb72f",
-        'secondary' : "#1c542a",
-        'aliceblue':"#f0f8ff",
+        'primary' : "#20bad1",
+        'secondary' : "#191825",
+        'darkprimary':"#ed143d",
+        'textcolor':"#575757",
       }
     },
   },
