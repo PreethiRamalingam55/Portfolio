@@ -1,9 +1,11 @@
+
 type Props = {
-  iconList: string;
+  iconList: { [key: string]: React.ElementType };
   iconName: string;
   [key: string]: unknown;
 };
+
 export const getIcon = ({ iconList, iconName, ...rest }: Props) => {
-  const TagName = iconList[iconName];
-  return !!TagName ? <TagName {...rest} /> : null;
+  const IconComponent = iconList[iconName];
+  return IconComponent ? <IconComponent {...rest} /> : null;
 };
