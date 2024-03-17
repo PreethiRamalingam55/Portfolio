@@ -1,35 +1,21 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3, faJs, faReact, faVuejs, faNodeJs, faPython, faDatabase } from '@fortawesome/free-brands-svg-icons';
+import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs, FaPython, FaDatabase } from 'react-icons/fa';
+import { TiSocialLinkedinCircular } from 'react-icons/ti'; // Importing from the correct package
+import { TbBrandNextjs } from 'react-icons/tb';
 
-export default function Skills() {
-  return (
-    <div className="h-screen container m-auto py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Skills</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <SkillCategory title="Frontend Development" color="primary">
-          <Skill icon={faHtml5} name="HTML5" level="90" />
-          <Skill icon={faCss3} name="CSS3" level="85" />
-          <Skill icon={faJs} name="JavaScript (ES6+)" level="80" />
-          <Skill icon={faReact} name="React.js" level="85" />
-          <Skill icon={faVuejs} name="Next.js" level="80" />
-        </SkillCategory>
-        <SkillCategory title="Backend Development" color="primary">
-          <Skill icon={faNodeJs} name="Node.js" level="75" />
-          <Skill icon={faPython} name="Python" level="70" />
-          <Skill icon={faPython} name="Laravel" level="70" />
-        </SkillCategory>
-        <SkillCategory title="Database" color="primary">
-          <Skill icon={faDatabase} name="MySQL" level="80" />
-          <Skill icon={faDatabase} name="MongoDB" level="75" />
-          <Skill icon={faDatabase} name="PostgreSQL" level="70" />
-        </SkillCategory>
-      </div>
-    </div>
-  );
+interface SkillProps {
+  icon: React.ComponentType<any>; // Adjust the type of icon
+  name: string;
+  level: string;
 }
 
-const SkillCategory = ({ title, color, children }) => (
+interface SkillCategoryProps {
+  title: string;
+  color: string;
+  children: React.ReactNode;
+}
+
+const SkillCategory: React.FC<SkillCategoryProps> = ({ title, color, children }) => (
   <div className="bg-white shadow-md p-6 rounded-lg">
     <h2 className={`text-2xl font-semibold mb-4 text-center text-${color}`}>{title}</h2>
     <ul>
@@ -38,10 +24,10 @@ const SkillCategory = ({ title, color, children }) => (
   </div>
 );
 
-const Skill = ({ icon, name, level }) => (
+const Skill: React.FC<SkillProps> = ({ icon: Icon, name, level }) => ( // Adjusted icon prop
   <li className="flex items-center justify-between mb-4">
     <div className="flex items-center">
-      <FontAwesomeIcon icon={icon} className={`w-6 h-6 mr-4 text-${name.toLowerCase()} rounded-full`} />
+      <Icon className={`w-6 h-6 mr-4 text-${name.toLowerCase()} rounded-full`} /> {/* Using the icon component directly */}
       <span className="text-lg dark:text-black">{name}</span>
     </div>
     <div className="flex items-center">
@@ -51,3 +37,30 @@ const Skill = ({ icon, name, level }) => (
     </div>
   </li>
 );
+
+const Skills: React.FC = () => {
+  return (
+    <div className="h-screen container m-auto py-8 flex flex-col justify-center items-center">
+      <h1 className="text-3xl font-bold mb-8 text-center">Skills</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <SkillCategory title="Frontend Development" color="primary">
+          <Skill icon={FaHtml5} name="HTML5" level="90" />
+          <Skill icon={FaCss3} name="CSS3" level="85" />
+          <Skill icon={FaJs} name="JavaScript (ES6+)" level="80" />
+          <Skill icon={FaReact} name="React.js" level="85" />
+          <Skill icon={TbBrandNextjs} name="Next.js" level="80" />
+        </SkillCategory>
+        <SkillCategory title="Backend Development" color="primary">
+          <Skill icon={FaNodeJs} name="Node.js" level="75" />
+          <Skill icon={FaPython} name="Python" level="70" />
+          <Skill icon={FaPython} name="Laravel" level="70" />
+        </SkillCategory>
+        <SkillCategory title="Database" color="primary">
+          <Skill icon={FaDatabase} name="MySQL" level="80" />
+        </SkillCategory>
+      </div>
+    </div>
+  );
+};
+
+export default Skills;
