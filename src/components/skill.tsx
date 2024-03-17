@@ -40,7 +40,7 @@ const Skill: React.FC<SkillProps> = ({ icon: Icon, name, level }) => ( // Adjust
 
 const Skills: React.FC = () => {
   return (
-    <div className="h-screen container m-auto py-8 flex flex-col justify-center items-center">
+    <div className="mt-[350px] md:mt-0 md:h-screen container m-auto py-8 flex flex-col justify-center items-center">
       <h1 className="text-3xl font-bold mb-8 text-center">Skills</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <SkillCategory title="Frontend Development" color="primary">

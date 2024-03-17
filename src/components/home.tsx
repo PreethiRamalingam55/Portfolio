@@ -6,17 +6,17 @@ export default function Home() {
   return (
     <div className="bg-cover bg-no-repeat w-full">
         <div className="container flex flex-col md:flex-row justify-center items-center md:gap-32">
-          <div>
+          <div className='order-2 md:order-1'>
             <Image
               src="/assets/images/varun.jpeg"
               alt="Varun's Image"
               className="rounded-full"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
             />
           </div>
-          <div className="container flex flex-col justify-center h-screen">
-            <h1 className="text-xl md:text-3xl my-3">Hello, I am</h1>
+          <div className="container flex flex-col justify-center md:h-screen order-1 md:order-2">
+            <h1 className="mt-20 md:mt-0 text-xl md:text-3xl my-3">Hello, I am</h1>
             <h2 className="text-3xl md:text-6xl">
               Varun{" "}
               <span className="text-primary dark:text-darkprimary">Raja</span>
@@ -32,7 +32,7 @@ export default function Home() {
                 }}
               />
             </div>
-            <button className="my-3 bg-primary rounded-full w-40 p-3 text-white hover:bg-secondary">
+            <button className="my-3 bg-primary dark:bg-darkprimary rounded-full w-40 p-3 text-white hover:bg-secondary">
               <a
                 href="/Varunraja(Resume).pdf"
                 download

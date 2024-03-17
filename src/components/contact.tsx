@@ -4,7 +4,7 @@ import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function ContactUs() {
   return (
-    <div className="h-screen container mx-auto px-4 py-8 flex flex-col justify-center items-center">
+    <div className="md:h-screen container mx-auto px-4 py-8 flex flex-col justify-center items-center">
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
       <p className="text-lg mb-4">Please feel free to contact us for any inquiries or feedback:</p>
       <div className="flex flex-col items-center">

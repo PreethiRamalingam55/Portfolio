@@ -51,7 +51,7 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const sections = document.querySelectorAll("section");
-      let activeSection = "home"; // Default to "home" section if no other section is active
+      let activeSection = "home"; 
   
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -63,6 +63,7 @@ const Header: React.FC = () => {
       });
   
       setActiveLink(activeSection);
+      console.log(activeSection);
     };
   
     window.addEventListener("scroll", handleScroll);
@@ -70,8 +71,7 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
-console.log(activeLink);
+
   return (
     <header id="siteHeader" ref={siteHeaderRef} className="w-full relative z-20">
       <div className={"innerSticky fixed top-0 z-[1000] w-full"}>
@@ -92,8 +92,7 @@ console.log(activeLink);
                   smooth={true}
                   duration={500}
                   spy={true}
-                  className="fill-textcolor"
-                  activeClass="fill-primary"
+                  
                 >
                   {getIcon({ iconList: HeaderIcon, iconName: v.icon })}
                 </ScrollLink>

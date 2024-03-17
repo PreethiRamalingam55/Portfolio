@@ -35,6 +35,9 @@ html {
 ::-webkit-scrollbar-track {
   background: var(--primary);
 }
+body.dark ::-webkit-scrollbar-track {
+  background: var(--darkprimary);
+}
 
 ::-webkit-scrollbar-thumb {
   background: #888;
@@ -77,3 +80,9 @@ input:checked ~ .sun {
   }
 }
 
+.active svg {
+  fill: var(--primary);
+}
+.dark .active svg {
+  fill: var(--darkprimary);
+}
