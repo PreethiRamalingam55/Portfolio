@@ -21,9 +21,11 @@ html {
 :root {
   --primary: #20bad1;
   --secondary: #191825;
-  --darkprimary: #ed143d;
 }
-
+.dark:root {
+  --primary: #8121d0;
+  --secondary: #331c52;
+}
 #siteHeader.is-scrolling .innerSticky {
   @apply bg-white dark:bg-darkprimary shadow-2xl transition-all ease-linear duration-300;
 }
@@ -35,12 +37,10 @@ html {
 ::-webkit-scrollbar-track {
   background: var(--primary);
 }
-body.dark ::-webkit-scrollbar-track {
-  background: var(--darkprimary);
-}
+
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--secondary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -84,5 +84,23 @@ input:checked ~ .sun {
   fill: var(--primary);
 }
 .dark .active svg {
-  fill: var(--darkprimary);
+  fill: var(--primary);
+}
+
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 50%; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Animation */
+}
+
+.scroll-to-top-btn:hover {
+  background-color: var(--secondary); 
+  transform: scale(1.1); 
 }

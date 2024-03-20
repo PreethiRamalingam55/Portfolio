@@ -7,7 +7,7 @@ export default function MobileHeader({ handleMenuClose }: any) {
   return (
     <div className="fixed left-0 right-0 w-full h-full">
       <div className="absolute inset-0 bg-gray-600 opacity-25 z-[-10] bg-glass-transparent"></div>
-      <nav className="max-w-[350px] w-full h-screen ml-auto bg-black pt-32">
+      <nav className="max-w-[350px] w-full h-screen ml-auto bg-black dark:bg-darksecondary pt-32">
         <h1
           onClick={handleMenuClose}
           className="text-white text-center my-5 cursor-pointer hover:text-gray-400"

@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"; // Changed FaX
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-secondary dark:bg-darksecondary text-white py-8">
       <div className="container mx-auto flex justify-between items-center">
         <p className="text-center md:text-left">© 2024 Varunraja Portfolio</p>
         <div className="flex space-x-4">

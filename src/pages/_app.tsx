@@ -6,7 +6,7 @@ import { ThemeProvider } from 'next-themes';
 import Loader from '../components/loader/preloader';
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-
+import ScrollToTopButton from '@/components/scrolltotop'
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
   authenticate?: boolean;
@@ -49,6 +49,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       {loading ? (<Loader />) : (
         <ThemeProvider attribute='class'>
           {getLayout(<Component {...pageProps} />)}
+          <ScrollToTopButton />
         </ThemeProvider>
       )}
     </div>
