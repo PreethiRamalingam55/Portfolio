@@ -10,7 +10,7 @@ export default function Home() {
             <Image
               src="/assets/images/varun.jpeg"
               alt="Varun's Image"
-              className="rounded-full"
+              className="rounded-full w-72 md:w-96"
               width={400}
               height={400}
             />
