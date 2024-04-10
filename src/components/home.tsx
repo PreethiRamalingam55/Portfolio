@@ -19,10 +19,10 @@ export default function Home() {
             <h1 className="mt-20 md:mt-0 text-xl md:text-3xl my-3">Hello, I am</h1>
             <h2 className="text-3xl md:text-6xl ">
               Varun{" "}
-              <span className="text-primary dark:text-darkprimary font-bold">Raja</span>
+              <span className="text-gradient dark:text-gradient font-bold">Raja</span>
             </h2>
-            <h3 className="text-3xl md:text-6xl my-3 ">And <span className='text-primary dark:text-darkprimary font-bold'>I'm</span></h3>
-            <div className="text-3xl md:text-6xl my-3 text-primary dark:text-darkprimary font-bold">
+            <h3 className="text-3xl md:text-6xl my-3 ">And <span className='text-gradient dark:text-gradient font-bold'>I'm</span></h3>
+            <div className="text-3xl md:text-6xl my-3 text-gradient dark:text-gradient font-bold">
               {/* <Typewriter
                 options={{
                   strings: ["FrontEnd Developer", "BackEnd Developer"],

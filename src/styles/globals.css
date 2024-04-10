@@ -104,3 +104,17 @@ input:checked ~ .sun {
   background-color: var(--secondary); 
   transform: scale(1.1); 
 }
+
+.text-gradient {
+  background-image: linear-gradient(to right, #20bad1, #8121d0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .text-gradient {
+  background-image: linear-gradient(to right, #8121d0, #20bad1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
