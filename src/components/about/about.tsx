@@ -2,7 +2,10 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="md:h-screen container mx-auto px-4 py-8">
+    <div className="relative md:h-screen container mx-auto px-4 py-8">
+      <span className="absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[350px] opacity-5 font-semibold leading">
+        About
+      </span>
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-4">About Me</h1>
         <p className="text-lg text-gray-700 dark:text-white">

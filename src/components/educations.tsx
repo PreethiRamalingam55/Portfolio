@@ -1,0 +1,110 @@
+import { useState } from "react";
+
+export default function Educations() {
+  const [openIndex, setOpenIndex] = useState(-1);
+
+  const toggleAccordion = (index: any) => {
+    setOpenIndex(openIndex === index ? -1 : index);
+  };
+
+  const Education = [
+    {
+      title: "Degree",
+      department: "Electronics and Communication Engineering",
+      college: "Adhiyamaan College of Engineering",
+      place: "Hosur",
+      year: "2018 - 2021",
+    },
+    {
+      title: "HCL",
+      department: "Computer Science",
+      college: "Trinity Matriculation Higher Secondary School",
+      place: "Krishnagiri",
+      year: "2017 - 2018",
+    },
+    {
+        title: "SCL",
+        department: "High School",
+        college: "Trinity Matriculation Higher Secondary School",
+        place: "Krishnagiri",
+        year: "2014 - 2015",
+      },
+  ];
+
+  const Experience = [
+    {
+        title:'FullStack Developer',
+        company : 'Knewtontech',
+        year : '2023 - Present',
+        des: 'Worked as a FullStack Developer for 1 year, which included a 3-month internship. Also involved in exploring new roles within the company.',
+    },
+    {
+      title: 'Intern FullStack Developer',
+      company: 'TechbessHive',
+      year: '2023',
+      des: 'Completed an internship as a FullStack Developer in 2023.'
+    }
+  ]
+  return (
+    <div className="relative md:h-screen container mx-auto px-4 py-8 flex flex-col justify-center">
+      <span className="absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[350px] opacity-5 font-semibold leading">
+        History
+      </span>
+      <h5 className='font-caveat text-center font-bold text-3xl my-2'>PROFESSIONAL </h5>
+      <p className='font-caveat text-center'><span className='text-primary'>My</span> Story</p>
+      <div className="grid md:grid-cols-12">
+        <div className="md:col-span-5 gap-3">
+          <h6 className="text-2xl text-center p-4 border-b-2 border-[#a3a5a7] ">Educations</h6>
+          {Education?.map((edu, index) => (
+            <div key={index} className="mb-4">
+              <h5
+                onClick={() => toggleAccordion(index)}
+                className="cursor-pointer flex items-center justify-between text-xl my-2 p-4 border-b-[1px] border-primary"
+              >
+                {edu.title}
+                <div className=" border-2 border-[#a3a5a7] rounded-full w-10 h-10 flex justify-center items-center">
+                  <span className="font-semibold text-xl ">{openIndex === index ? "-" : "+"}</span>
+                </div>
+              </h5>
+              {openIndex === index && (
+                <div className="accordion-transition">
+                  <div className="flex justify-between">
+                    <p>{edu.department}</p>
+                    <p>{edu.year}</p>
+                  </div>
+                  <p>{edu.place}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="col-span-1"></div>
+        <div className="md:col-span-5">
+          <h6 className="text-2xl text-center p-4 border-b-2 border-[#a3a5a7] ">Experience</h6>
+          {Experience?.map((epx, index) => (
+            <div key={index} className="mb-4">
+              <h5
+                onClick={() => toggleAccordion(index)}
+                className="cursor-pointer flex items-center justify-between text-xl my-2 p-4 border-b-[1px] border-primary"
+              >
+                {epx.title}
+                <div className=" border-2 border-[#a3a5a7] rounded-full w-10 h-10 flex justify-center items-center">
+                  <span className="font-semibold text-xl ">{openIndex === index ? "-" : "+"}</span>
+                </div>
+              </h5>
+              {openIndex === index && (
+                <div className="accordion-transition">
+                  <div className="flex justify-between">
+                    <p>{epx.company}</p>
+                    <p>{epx.year}</p>
+                  </div>
+                  <p>{epx.des}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

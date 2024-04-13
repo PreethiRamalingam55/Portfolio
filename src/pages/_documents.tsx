@@ -10,6 +10,8 @@ export default function Document() {
         <meta name="keywords" content="titla, meta, nextjs" />
         <meta name="author" content="varunraja" />
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300&family=Jost&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+
       </Head>
       <body>
         <Main />

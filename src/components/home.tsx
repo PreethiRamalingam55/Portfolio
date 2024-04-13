@@ -5,7 +5,10 @@ import { CgSoftwareDownload } from "react-icons/cg";
 export default function Home() {
   return (
     <div className="w-full dark:bg-gradient-to-r from-darkprimary/30 to-darksecondary h-screen">
-        <div className="container flex flex-col md:flex-row justify-center items-center md:gap-32">
+        <div className="relative container flex flex-col md:flex-row justify-center items-center md:gap-32">
+        <span className="absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[300px] opacity-5 font-semibold leading">
+        Web Developer
+      </span>
           <div className='order-2 md:order-1'>
             <Image
               src="/assets/images/varun.jpeg"

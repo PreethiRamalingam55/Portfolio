@@ -31,6 +31,9 @@ module.exports = {
         'darksecondary':"#291c3a",
         'textcolor':"#575757",
         'bgcolor':"#e1ebed"
+      },
+      fontFamily: {
+        'caveat': ['Caveat', 'cursive']
       }
     },
   },
