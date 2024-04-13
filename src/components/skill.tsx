@@ -15,9 +15,9 @@ export default function Skill() {
   
   return (
     <div className='relative md:h-screen container mx-auto px-4 py-8 flex flex-col justify-center items-center'>
-      <span className='absolute left-auto bottom-0 z-[-1] w-100 text-[250px] md:text-[350px] opacity-5 font-semibold leading'>skills</span>
-      <h5 className='font-caveat text-center font-bold text-3xl my-2'>PROFESSIONAL SKILLS</h5>
-      <p className='font-caveat'><span className='text-primary'>My</span> Talent</p>
+      <span className='font-caveat absolute left-auto bottom-0 z-[-1] w-100 text-[250px] md:text-[350px] opacity-5 font-semibold leading'>skills</span>
+      <h5 className='text-center font-bold text-3xl my-2'>PROFESSIONAL SKILLS</h5>
+      <p className='font-caveat font-semibold text-2xl'><span className='text-primary'>My</span> Talent</p>
       <div className="flex flex-wrap items-center justify-center gap-10 my-5">
         {
           skills?.map((skillCategory, index) => (

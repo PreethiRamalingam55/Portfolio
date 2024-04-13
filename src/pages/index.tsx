@@ -17,7 +17,7 @@ export default function Home() {
         <div id="skill">
           <Skillpage />
         </div>
-        <div id="expereince">
+        <div id="educations">
           <Educations />
         </div>
         <div id="contact">

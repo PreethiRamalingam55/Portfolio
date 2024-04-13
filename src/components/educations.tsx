@@ -23,7 +23,7 @@ export default function Educations() {
       year: "2017 - 2018",
     },
     {
-        title: "SCL",
+        title: "SSCL",
         department: "High School",
         college: "Trinity Matriculation Higher Secondary School",
         place: "Krishnagiri",
@@ -47,11 +47,11 @@ export default function Educations() {
   ]
   return (
     <div className="relative md:h-screen container mx-auto px-4 py-8 flex flex-col justify-center">
-      <span className="absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[350px] opacity-5 font-semibold leading">
+      <span className="font-caveat absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[350px] opacity-5 font-semibold leading">
         History
       </span>
-      <h5 className='font-caveat text-center font-bold text-3xl my-2'>PROFESSIONAL </h5>
-      <p className='font-caveat text-center'><span className='text-primary'>My</span> Story</p>
+      <h5 className='text-center font-bold text-3xl my-2'>PROFESSIONAL </h5>
+      <p className='font-caveat font-semibold text-2xl text-center'><span className='text-primary'>My</span> Story</p>
       <div className="grid md:grid-cols-12">
         <div className="md:col-span-5 gap-3">
           <h6 className="text-2xl text-center p-4 border-b-2 border-[#a3a5a7] ">Educations</h6>
@@ -68,9 +68,9 @@ export default function Educations() {
               </h5>
               {openIndex === index && (
                 <div className="accordion-transition">
-                  <div className="flex justify-between">
-                    <p>{edu.department}</p>
-                    <p>{edu.year}</p>
+                  <div className="flex justify-between font-semibold ">
+                    <p className="text-lg">{edu.department}</p>
+                    <p className="text-lg">{edu.year}</p>
                   </div>
                   <p>{edu.place}</p>
                 </div>
@@ -94,9 +94,9 @@ export default function Educations() {
               </h5>
               {openIndex === index && (
                 <div className="accordion-transition">
-                  <div className="flex justify-between">
-                    <p>{epx.company}</p>
-                    <p>{epx.year}</p>
+                  <div className="flex justify-between font-semibold">
+                    <p className="text-lg">{epx.company}</p>
+                    <p className="text-lg">{epx.year}</p>
                   </div>
                   <p>{epx.des}</p>
                 </div>

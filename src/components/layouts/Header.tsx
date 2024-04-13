@@ -30,6 +30,12 @@ const Header: React.FC = () => {
       tooltip: "View My Skills"
     },
     {
+      label: "Eductions",
+      link: "educations",
+      icon: "EducationIcon",
+      tooltip: "View My Eductions"
+    },
+    {
       label: "Contact",
       link: "contact",
       icon: "ContactIcon",

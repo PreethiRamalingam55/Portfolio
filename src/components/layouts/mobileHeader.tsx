@@ -47,12 +47,12 @@ export default function MobileHeader({ handleMenuClose }: any) {
           </li>
           <li>
             <Link
-              to="project"
+              to="educations"
               smooth={true}
               duration={500}
               className="hover:text-primary"
             >
-              Projects
+              Educations
             </Link>
           </li>
           <li>

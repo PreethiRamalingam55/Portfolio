@@ -3,9 +3,10 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>Varun-Portfolio</title>
         <meta
           name="description"
-          content="Transforming Businesses with Cutting-Edge Software Solutions. Discover how Knewton Tech revolutionizes operations and drives success with custom web applications, mobile apps, and enterprise solutions. Contact us now for a consultation."
+          content="Explore Varun's portfolio showcasing his expertise in web development, design, and digital innovation. Discover innovative projects, creative solutions, and a passion for crafting exceptional user experiences. Contact Varun today to collaborate on your next project."
         />
         <meta name="keywords" content="titla, meta, nextjs" />
         <meta name="author" content="varunraja" />
