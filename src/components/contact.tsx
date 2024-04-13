@@ -50,10 +50,12 @@ export default function ContactUs() {
           message: '',
         });
         setModalMessage('Email sent successfully!');
+        setModalOpen(true);
       } else {
         // Handle failure
         console.error('Failed to send email.');
         setModalMessage('Failed to send email!');
+        setModalOpen(true);
       }
     } catch (error) {
       console.error('Failed to send email:', error);

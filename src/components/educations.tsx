@@ -16,7 +16,7 @@ export default function Educations() {
       year: "2018 - 2021",
     },
     {
-      title: "HCL",
+      title: "HSC",
       department: "Computer Science",
       college: "Trinity Matriculation Higher Secondary School",
       place: "Krishnagiri",
