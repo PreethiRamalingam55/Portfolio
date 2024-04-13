@@ -1,21 +1,36 @@
 import { useState } from 'react';
 import { FiMail, FiPhone } from "react-icons/fi";
-import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import Modal from './modal/modal';
 
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface ModalProps {
+  isOpen: boolean;
+  message: string;
+  onClose: () => void;
+}
 export default function ContactUs() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
     message: '',
   });
-  const handleChange = (e:any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e:any) => {
+
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [modalMessage, setModalMessage] = useState<string>('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
     try {
       const response = await fetch('https://varunportfolio-one.vercel.app/api/contact', {
         method: 'POST',
@@ -28,14 +43,27 @@ export default function ContactUs() {
       if (response.ok) {
         // Handle success
         console.log('Email sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+        setModalMessage('Email sent successfully!');
       } else {
         // Handle failure
         console.error('Failed to send email.');
+        setModalMessage('Failed to send email!');
       }
     } catch (error) {
       console.error('Failed to send email:', error);
     }
   };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <div className="relative md:h-screen container mx-auto px-4 py-8">
       <span className='font-caveat absolute left-auto bottom-0 z-[-1] w-100 text-[250px] md:text-[350px] opacity-5 font-semibold leading'>contact</span>
@@ -86,6 +114,7 @@ export default function ContactUs() {
           </form>
         </div>
       </div>
+      <Modal isOpen={modalOpen} message={modalMessage} onClose={closeModal} />
     </div>
   );
 }
