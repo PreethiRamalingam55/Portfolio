@@ -51,7 +51,7 @@ export default function Educations() {
         History
       </span>
       <h5 className='text-center font-bold text-3xl my-2'>PROFESSIONAL </h5>
-      <p className='font-caveat font-semibold text-2xl text-center'><span className='text-primary'>My</span> Story</p>
+      <p className='font-caveat font-semibold text-2xl text-center'><span className='text-primary dark:text-darkprimary'>My</span> Story</p>
       <div className="grid md:grid-cols-12">
         <div className="md:col-span-5 gap-3">
           <h6 className="text-2xl text-center p-4 border-b-2 border-[#a3a5a7] ">Educations</h6>
