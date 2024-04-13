@@ -1,9 +1,41 @@
-import React from "react";
+import { useState } from 'react';
 import { FiMail, FiPhone } from "react-icons/fi";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function ContactUs() {
-  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const handleChange = (e:any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e:any) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        // Handle success
+        console.log('Email sent successfully!');
+      } else {
+        // Handle failure
+        console.error('Failed to send email.');
+      }
+    } catch (error) {
+      console.error('Failed to send email:', error);
+    }
+  };
   return (
     <div className="relative md:h-screen container mx-auto px-4 py-8">
       <span className='font-caveat absolute left-auto bottom-0 z-[-1] w-100 text-[250px] md:text-[350px] opacity-5 font-semibold leading'>contact</span>
@@ -33,22 +65,22 @@ export default function ContactUs() {
         </div>
         <div className="md:col-span-1"></div>
         <div className="md:col-span-6">
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="">Your Name *</label><br />
-              <input type="text"  className="my-2 border-[1px] rounded-full p-2 w-4/6"/>
+              <input type="text"  name="name" className="my-2 border-[1px] rounded-full p-2 w-4/6" onChange={handleChange} required/>
             </div>
             <div>
               <label htmlFor="">Your Email *</label><br />
-              <input type="email"  className="my-2 border-[1px] rounded-full p-2 w-4/6"/>
+              <input type="email"  name="email" className="my-2 border-[1px] rounded-full p-2 w-4/6" onChange={handleChange} required/>
             </div>
             <div>
               <label htmlFor="">Subject *</label><br />
-              <input type="text"  className="my-2 border-[1px] rounded-full p-2 w-4/6"/>
+              <input type="text"  name="subject" className="my-2 border-[1px] rounded-full p-2 w-4/6" onChange={handleChange} required/>
             </div>
             <div>
               <label htmlFor="">Message *</label><br />
-              <textarea className="my-2 border-[1px] rounded-xl p-2" rows={4} cols={40}></textarea>
+              <textarea className="my-2 border-[1px] rounded-xl p-2" rows={4} cols={40} name="message" onChange={handleChange} required></textarea>
             </div>
             <button type="submit" className="mx-auto bg-primary p-2 rounded-md text-white w-32">Send</button>
           </form>
