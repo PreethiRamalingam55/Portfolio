@@ -17,7 +17,7 @@ export default function ContactUs() {
     e.preventDefault();
     console.log(formData);
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://varunportfolio-one.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
