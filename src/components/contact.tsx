@@ -112,21 +112,23 @@ export default function ContactUs() {
         <div className="md:col-span-1"></div>
         <div className="md:col-span-6">
           <form onSubmit={handleSubmit}>
+            <div className="md:flex gap-14">
             <div>
               <label htmlFor="">Your Name *</label><br />
-              <input type="text"  name="name" className="my-2 border-[1px] rounded-full p-2 md:w-4/6 dark:bg-transparent" onChange={handleChange} required/>
+              <input type="text"  name="name" className="my-2 border-[1px] rounded-full p-2 dark:bg-transparent" onChange={handleChange} required/>
             </div>
             <div>
               <label htmlFor="">Your Email *</label><br />
-              <input type="email"  name="email" className="my-2 border-[1px] rounded-full p-2 md:w-4/6 dark:bg-transparent" onChange={handleChange} required/>
+              <input type="email"  name="email" className="my-2 border-[1px] rounded-full p-2  dark:bg-transparent" onChange={handleChange} required/>
+            </div>
             </div>
             <div>
               <label htmlFor="">Subject *</label><br />
-              <input type="text"  name="subject" className="my-2 border-[1px] rounded-full p-2 md:w-4/6 dark:bg-transparent" onChange={handleChange} required/>
+              <input type="text"  name="subject" className="my-2 border-[1px] rounded-full p-2 md:w-5/6 dark:bg-transparent" onChange={handleChange} required/>
             </div>
             <div>
               <label htmlFor="">Message *</label><br />
-              <textarea className="my-2 border-[1px] rounded-xl p-2 md:w-4/6 dark:bg-transparent" rows={4}  name="message" onChange={handleChange} required></textarea>
+              <textarea className="my-2 border-[1px] rounded-xl p-2 md:w-5/6 dark:bg-transparent" rows={4}  name="message" onChange={handleChange} required></textarea>
             </div>
             <button type="submit" className="mx-auto bg-primary dark:bg-darkprimary p-2 rounded-md text-white w-32">Send</button>
           </form>

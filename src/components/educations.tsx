@@ -1,11 +1,17 @@
 import { useState } from "react";
 
 export default function Educations() {
-  const [openIndex, setOpenIndex] = useState(-1);
+  const [openEducationIndex, setOpenEducationIndex] = useState(-1);
+  const [openExperienceIndex, setOpenExperienceIndex] = useState(-1);
 
-  const toggleAccordion = (index: any) => {
-    setOpenIndex(openIndex === index ? -1 : index);
+  const toggleEducationAccordion = (index:any) => {
+    setOpenEducationIndex(openEducationIndex === index ? -1 : index);
   };
+
+  const toggleExperienceAccordion = (index:any) => {
+    setOpenExperienceIndex(openExperienceIndex === index ? -1 : index);
+  };
+
 
   const Education = [
     {
@@ -58,15 +64,15 @@ export default function Educations() {
           {Education?.map((edu, index) => (
             <div key={index} className="mb-4">
               <h5
-                onClick={() => toggleAccordion(index)}
-                className="cursor-pointer flex items-center justify-between text-xl my-2 p-4 border-b-[1px] border-primary"
+                onClick={() => toggleEducationAccordion(index)}
+                className="cursor-pointer flex items-center justify-between text-xl my-2 p-4 border-b-[1px] border-primary dark:border-darkprimary"
               >
                 {edu.title}
                 <div className=" border-2 border-[#a3a5a7] rounded-full w-10 h-10 flex justify-center items-center">
-                  <span className="font-semibold text-xl ">{openIndex === index ? "-" : "+"}</span>
+                  <span className="font-semibold text-xl ">{openEducationIndex === index ? "-" : "+"}</span>
                 </div>
               </h5>
-              {openIndex === index && (
+              {openEducationIndex === index && (
                 <div className="accordion-transition">
                   <div className="flex justify-between font-semibold ">
                     <p className="text-lg">{edu.department}</p>
@@ -84,15 +90,15 @@ export default function Educations() {
           {Experience?.map((epx, index) => (
             <div key={index} className="mb-4">
               <h5
-                onClick={() => toggleAccordion(index)}
-                className="cursor-pointer flex items-center justify-between text-xl my-2 p-4 border-b-[1px] border-primary"
+                onClick={() => toggleExperienceAccordion(index)}
+                className="cursor-pointer flex items-center justify-between text-xl my-2 p-4 border-b-[1px] border-primary dark:border-darkprimary"
               >
                 {epx.title}
                 <div className=" border-2 border-[#a3a5a7] rounded-full w-10 h-10 flex justify-center items-center">
-                  <span className="font-semibold text-xl ">{openIndex === index ? "-" : "+"}</span>
+                  <span className="font-semibold text-xl ">{openExperienceIndex === index ? "-" : "+"}</span>
                 </div>
               </h5>
-              {openIndex === index && (
+              {openExperienceIndex === index && (
                 <div className="accordion-transition">
                   <div className="flex justify-between font-semibold">
                     <p className="text-lg">{epx.company}</p>
