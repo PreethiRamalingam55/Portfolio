@@ -116,7 +116,7 @@ const Header: React.FC = () => {
         </nav>
         {isMenuVisible && (
           <nav>
-            <MenuHeader handleMenuClose={handleMenuClose} key="menu" />
+            <MenuHeader isMenuVisible={isMenuVisible} handleMenuClose={handleMenuClose} key="menu" />
           </nav>
         )}
       </div>
