@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="relative md:h-screen container mx-auto px-4 py-8">
+    <div className="relative container mx-auto px-4 py-8">
       <span className="font-caveat absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[350px] opacity-5 font-semibold leading">
         About
       </span>

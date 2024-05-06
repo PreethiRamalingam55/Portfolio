@@ -25,7 +25,7 @@ export default function Home() {
               <span className="text-gradient dark:text-gradient font-bold">Raja</span>
             </h2>
             <h3 className="text-3xl md:text-6xl my-3 ">And <span className='text-gradient dark:text-gradient font-bold'>I'm</span></h3>
-            <div className="text-3xl md:text-6xl my-3 text-gradient dark:text-gradient font-bold">
+            <div className="text-3xl md:text-6xl my-3 text-gradient dark:text-gradient font-bold leading-normal">
               {/* <Typewriter
                 options={{
                   strings: ["FrontEnd Developer", "BackEnd Developer"],

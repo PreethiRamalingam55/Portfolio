@@ -2,6 +2,7 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import ScrollProgress from "../scrollprogresbar";
 
 const SiteLayout = ({ children }: any) => {
 	
@@ -19,6 +20,7 @@ const SiteLayout = ({ children }: any) => {
 			>
 				{children}
 			</main>
+			<ScrollProgress />
 			<Footer />
 		</div>
 	);

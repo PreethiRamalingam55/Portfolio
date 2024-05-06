@@ -32,10 +32,10 @@ const ScrollToTopButton: React.FC = () => {
           isVisible ? "100" : "0"
         }`}
       >
-        <div className="scroll-to-top-btn group group-hover:bg-secondary group-hover:scale-110">
+        <div className="scroll-to-top-btn bottom-5 md:bottom-52 right-5 md:right-[105px] group group-hover:bg-secondary group-hover:scale-110">
           <FaArrowUp />
         </div>
-        <p className="fixed bottom-32 right-20 capitalize leading-loose transform rotate-[-90deg] text-primary">
+        <p className="fixed hidden md:block bottom-32 right-20 capitalize leading-loose transform rotate-[-90deg] text-primary">
           back to top
         </p>
       </button>
