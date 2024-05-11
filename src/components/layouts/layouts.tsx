@@ -21,7 +21,7 @@ const SiteLayout = ({ children }: any) => {
 				{children}
 			</main>
 			<ScrollProgress />
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 };

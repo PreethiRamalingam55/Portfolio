@@ -141,3 +141,18 @@ input:checked ~ .sun {
   transition: height 0.3s ease;
 }
 
+.noise {
+  position: fixed;
+  z-index: 9999;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  -webkit-animation: grain 7s steps(10) infinite;
+  animation: grain 7s steps(10) infinite;
+  background-image: url('/assets/images/noise.png');
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: .25;
+  pointer-events: none;
+}

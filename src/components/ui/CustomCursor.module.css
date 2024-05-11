@@ -1,0 +1,16 @@
+.cursor {
+  width: 24px;
+  height: 24px;
+  background-color: #606887;
+  border-color: #606887;
+  mix-blend-mode: multiply;
+}
+
+.cursor-dot {
+  width: 4px;
+  height: 4px;
+  background-color: #606887;
+  -webkit-animation: .4s linear;
+  animation: .4s linear;
+  mix-blend-mode: multiply;
+}

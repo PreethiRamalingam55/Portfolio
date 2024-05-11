@@ -21,6 +21,7 @@ export default function Document() {
       </Head>
       <body>
         <Main />
+        <div className="noise"></div>
         <NextScript />
       </body>
     </Html>
