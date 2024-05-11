@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function MobileHeader({activeLink,handleMenuClose}:any) {
   return (
-    <div className="fixed left-0 top-0 w-full md:w-1/2 transition-transform duration-1000 ease-linear transform translate-x-full md:translate-x-0">
+    <div className="fixed left-0 top-0 w-full md:w-1/2 transition-transform duration-1000 ease-linear">
       <nav className="w-full h-full bg-black dark:bg-darksecondary p-8 shadow-lg">
         <ul className="flex flex-col h-screen gap-5 justify-center items-center text-white text-3xl m-auto leading-loose">
           <li>
