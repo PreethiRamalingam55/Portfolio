@@ -156,3 +156,6 @@ input:checked ~ .sun {
   opacity: .25;
   pointer-events: none;
 }
+
+/* mouse  */
+

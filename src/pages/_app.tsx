@@ -6,7 +6,7 @@ import { ThemeProvider } from 'next-themes';
 import Loader from '../components/loader/preloader';
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import Customermouse from '@/components/ui/customermouse';
+import Customermouse from '@/components/customcursor/customermouse';
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
   authenticate?: boolean;
