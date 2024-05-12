@@ -7,7 +7,7 @@ const CustomCursor = () => {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e:any) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
