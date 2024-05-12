@@ -7,7 +7,7 @@ const CustomCursor = () => {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e:any) => {
+    const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
@@ -30,34 +30,40 @@ const CustomCursor = () => {
     };
   }, []);
 
+  const handleLinkHover = () => {
+    setHovered(true);
+  };
+
+  const handleLinkLeave = () => {
+    setHovered(false);
+  };
+
   useEffect(() => {
-    const handleLinkHover = () => {
-      setHovered(true);
-    };
-
-    const handleLinkLeave = () => {
-      setHovered(false);
-    };
-
-    const links = document.querySelectorAll('a, button');
+    const links = document.querySelectorAll('a,button');
 
     links.forEach(link => {
-      link.addEventListener('mouseover', handleLinkHover);
+      link.addEventListener('mouseenter', handleLinkHover);
       link.addEventListener('mouseleave', handleLinkLeave);
+      link.addEventListener('click', handleButtonClick); // Adding click event listener to reset hover state
     });
 
     return () => {
       links.forEach(link => {
-        link.removeEventListener('mouseover', handleLinkHover);
+        link.removeEventListener('mouseenter', handleLinkHover);
         link.removeEventListener('mouseleave', handleLinkLeave);
+        link.removeEventListener('click', handleButtonClick);
       });
     };
   }, []);
 
+  const handleButtonClick = () => {
+    setHovered(false); // Reset hovered state when button is clicked
+  };
+
   return (
     <div>
-      <div className={`${styles.cursor} ${hovered ? styles.hovered : ''} ${clicked ? styles.expanded : ''}`} style={{ left: `calc(${position.x}px - 10px)`, top: `calc(${position.y}px - 10px)` }}></div>
-      <div className={`${styles['cursor-dot']} ${hovered ? styles.hovered : ''} ${clicked ? styles.expanded : ''}`} style={{ left: `${position.x}px`, top: `${position.y}px` }}></div>
+      <div className={`${styles.cursor} ${hovered ? styles.hovered : ''} ${clicked ? styles.expanded : ''}`} style={{ left: `calc(${position.x}px - 10px)`, top: `calc(${position.y}px - 10px)`, pointerEvents: 'none' }}></div>
+      <div className={`${styles['cursor-dot']} ${hovered ? styles.hovered : ''} ${clicked ? styles.expanded : ''}`} style={{ left: `${position.x}px`, top: `${position.y}px`, pointerEvents: 'none' }}></div>
     </div>
   );
 };

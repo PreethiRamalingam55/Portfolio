@@ -8,6 +8,8 @@ export default function Home() {
       data-aos="fade-in"
       className="w-full dark:bg-gradient-to-r from-darkprimary/20 to-darksecondary"
     >
+      <div className="rounded small-rounded"></div>
+<div className="rounded big-rounded"></div>
       <div className="h-screen relative container grid grid-col-1 md:grid-cols-2 justify-center items-center gap-10 md:gap-20">
         <span className="font-caveat h-full absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[300px] opacity-5 font-semibold">
           Web Developer
@@ -49,7 +51,7 @@ export default function Home() {
                   cursor: "",
                 }}
               /> */}
-            <h5>FullStack Developer</h5>
+            <h4>FullStack Developer</h4>
           </div>
           <button className="my-3 bg-primary dark:bg-darkprimary rounded-full w-40 p-3 text-white hover:bg-secondary">
             <a
