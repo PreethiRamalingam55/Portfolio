@@ -204,5 +204,7 @@ input:checked ~ .sun {
   .big-rounded {
     width: 200px;
     height: 200px;
+    bottom: -5%;
+    right: -12%;
   }
 }

@@ -8,8 +8,6 @@ export default function Home() {
       data-aos="fade-in"
       className="w-full dark:bg-gradient-to-r from-darkprimary/20 to-darksecondary"
     >
-      <div className="rounded small-rounded"></div>
-<div className="rounded big-rounded"></div>
       <div className="h-screen relative container grid grid-col-1 md:grid-cols-2 justify-center items-center gap-10 md:gap-20">
         <span className="font-caveat h-full absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[300px] opacity-5 font-semibold">
           Web Developer
@@ -42,7 +40,10 @@ export default function Home() {
               I'm
             </span>
           </h3>
-          <div data-aos="fade-in" className="text-3xl md:text-6xl my-3 text-gradient dark:text-gradient font-bold">
+          <div
+            data-aos="fade-in"
+            className="text-3xl md:text-6xl my-3 text-gradient dark:text-gradient font-bold"
+          >
             {/* <Typewriter
                 options={{
                   strings: ["FrontEnd Developer", "BackEnd Developer"],

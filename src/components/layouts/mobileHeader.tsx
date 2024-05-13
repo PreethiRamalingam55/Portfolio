@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+export default function MobileHeader({handleMenuClose}:any) {
 
-export default function MobileHeader({activeLink,handleMenuClose}:any) {
+  const router = useRouter();
+  const { pathname } = router;
+  const [activeLink, setActiveLink] = useState('');
+
+  useEffect(() => {
+    setActiveLink(pathname); 
+  }, [pathname]);
   return (
     <div className="fixed left-0 top-0 w-full md:w-1/2 transition-transform duration-1000 ease-linear">
       <nav className="w-full h-full bg-black dark:bg-darksecondary p-8 shadow-lg">
@@ -10,15 +18,16 @@ export default function MobileHeader({activeLink,handleMenuClose}:any) {
             <Link
               href="/"
               onClick={handleMenuClose}
-              className={` hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300 ${activeLink ? 'text-primary dark:text-darkprimary': ''}`}
+              className={` hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300 ${activeLink === '/' ? 'text-primary dark:text-darkprimary': ''}`}
             >
-              Home
+              Welcome
             </Link>
           </li>
           <li>
             <Link
               href="about"
-              className="hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300"
+              onClick={handleMenuClose}
+              className={`hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300 ${activeLink === '/about' ? 'text-primary dark:text-darkprimary': ''}`}
             >
               About
             </Link>
@@ -26,7 +35,8 @@ export default function MobileHeader({activeLink,handleMenuClose}:any) {
           <li>
             <Link
               href="skill"
-              className="hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300"
+              onClick={handleMenuClose}
+              className={`hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300 ${activeLink === '/skill' ? 'text-primary dark:text-darkprimary': ''}`}
             >
               Skills
             </Link>
@@ -34,7 +44,8 @@ export default function MobileHeader({activeLink,handleMenuClose}:any) {
           <li>
             <Link
               href="educations"
-              className="hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300"
+              onClick={handleMenuClose}
+              className={`hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300 ${activeLink === '/educations'? 'text-primary dark:text-darkprimary': ''}`}
             >
               Educations
             </Link>
@@ -42,7 +53,8 @@ export default function MobileHeader({activeLink,handleMenuClose}:any) {
           <li>
             <Link
               href="contact"
-              className="hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300"
+              onClick={handleMenuClose}
+              className={`hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300 ${activeLink === '/contact' ? 'text-primary dark:text-darkprimary': ''}`}
             >
               Contact
             </Link>
