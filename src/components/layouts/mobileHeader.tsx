@@ -34,11 +34,11 @@ export default function MobileHeader({handleMenuClose}:any) {
           </li>
           <li>
             <Link
-              href="skill"
+              href="projects"
               onClick={handleMenuClose}
-              className={`hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300 ${activeLink === '/skill' ? 'text-primary dark:text-darkprimary': ''}`}
+              className={`hover:text-primary dark:hover:text-darkprimary cursor-pointer transition-colors duration-300 ${activeLink === '/projects' ? 'text-primary dark:text-darkprimary': ''}`}
             >
-              Skills
+              Projects
             </Link>
           </li>
           <li>

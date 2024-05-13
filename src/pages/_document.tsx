@@ -3,7 +3,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Varun - Personal Protfolio</title>
         <meta
           name="description"
           content="Explore Varun's portfolio showcasing his expertise in web development, design, and digital innovation. Discover innovative projects, creative solutions, and a passion for crafting exceptional user experiences. Contact Varun today to collaborate on your next project."
@@ -18,7 +17,10 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
           rel="stylesheet"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body>
         <Main />

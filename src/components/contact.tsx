@@ -44,18 +44,17 @@ export default function ContactUs() {
           body: JSON.stringify(formData),
         }
       );
-
       if (response.ok) {
         // Handle success
         console.log("Email sent successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
         setModalMessage("Email sent successfully!");
         setModalOpen(true);
+        setFormData({
+          name: ' ',
+          email: ' ',
+          subject: ' ',
+          message: ' ',
+        });
       } else {
         // Handle failure
         console.error("Failed to send email.");

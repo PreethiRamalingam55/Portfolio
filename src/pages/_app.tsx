@@ -24,7 +24,6 @@ function handleExitComplete() {
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
-
   const authProps = Component.authenticate;
 
   useEffect(() => {
