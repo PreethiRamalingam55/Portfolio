@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function Educations() {
- 
   const Education = [
     {
       title: "Degree",
@@ -18,39 +17,66 @@ export default function Educations() {
       year: "2017 - 2018",
     },
     {
-        title: "SSCL",
-        department: "High School",
-        college: "Trinity Matriculation Higher Secondary School",
-        place: "Krishnagiri",
-        year: "2014 - 2015",
-      },
+      title: "SSCL",
+      department: "High School",
+      college: "Trinity Matriculation Higher Secondary School",
+      place: "Krishnagiri",
+      year: "2014 - 2015",
+    },
   ];
 
   const Experience = [
     {
-        title:'FullStack Developer',
-        company : 'Knewtontech',
-        year : '2023 - Present',
-        des: 'Worked as a FullStack Developer for 1 year, which included a 3-month internship. Also involved in exploring new roles within the company.',
+      title: "FullStack Developer",
+      company: "Knewtontech",
+      year: "2023 - Present",
+      des: "Worked as a FullStack Developer for 1 year, which included a 3-month internship. Also involved in exploring new roles within the company.",
     },
     {
-      title: 'Intern FullStack Developer',
-      company: 'TechbessHive',
-      year: '2023',
-      des: 'Completed an internship as a FullStack Developer in 2023.'
-    }
-  ]
+      title: "Intern FullStack Developer",
+      company: "TechbessHive",
+      year: "2023",
+      des: "Completed an internship as a FullStack Developer in 2023.",
+    },
+  ];
+
   return (
     <div className="relative container mx-auto px-4 py-8 flex flex-col justify-center">
-      {/* <span className="font-caveat absolute left-auto bottom-0 z-[-1] w-full text-[250px] md:text-[350px] opacity-5 font-semibold leading">
-        History
-      </span> */}
       <h1 className="text-5xl font-semibold text-gray-700 dark:text-darkprimary uppercase my-5 relative">
-      PROFESSIONAL
+        PROFESSIONAL
       </h1>
       <p className="font-caveat font-semibold text-2xl my-2">
         <span className="text-primary dark:text-darkprimary">My</span> Story
       </p>
+
+      <div className="mt-8">
+        <h2 className="text-3xl font-semibold text-gray-700 dark:text-darkprimary mb-4">Education</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Education.map((edu, index) => (
+            <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">{edu.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{edu.department}</p>
+              <p className="text-gray-600 dark:text-gray-300">{edu.college}</p>
+              <p className="text-gray-600 dark:text-gray-300">{edu.place}</p>
+              <p className="text-gray-600 dark:text-gray-300">{edu.year}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8">
+        <h2 className="text-3xl font-semibold text-gray-700 dark:text-darkprimary mb-4">Experience</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Experience.map((exp, index) => (
+            <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">{exp.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{exp.company}</p>
+              <p className="text-gray-600 dark:text-gray-300">{exp.year}</p>
+              <p className="text-gray-600 dark:text-gray-300">{exp.des}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
