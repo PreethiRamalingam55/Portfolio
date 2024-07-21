@@ -58,9 +58,12 @@ const Header: React.FC = () => {
     <header
       id="siteHeader"
       ref={siteHeaderRef}
-      className="w-full relative z-20"
+      className="w-full relative z-20 h-20"
     >
-      <div className={"innerSticky fixed top-0 z-[1000] w-full"}>
+      <div className={"innerSticky  top-0 z-[1000] w-full"}>
+        <div className="absolute top-[-25px]  md:left-52">
+          <img src="/assets/images/varun_logo.png" alt="Logo" />
+        </div>
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="absolute right-32 md:right-52 top-8 my-10"

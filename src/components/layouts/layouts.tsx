@@ -6,9 +6,10 @@ import ScrollProgress from "../scrollprogresbar";
 const SiteLayout = ({ children }: any) => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-      <div>
+       <div className="rounded small-rounded"></div>
+       <div className="rounded big-rounded"></div>
         <Header />
-      </div>
+     
       <main
         className="relative flex-grow dark:bg-[#0e1012] dark:text-white"
         style={{
@@ -17,8 +18,6 @@ const SiteLayout = ({ children }: any) => {
         }}
       >
         {children}
-        <div className="rounded small-rounded"></div>
-        <div className="rounded big-rounded"></div>
       </main>
       <ScrollProgress />
       {/* <Footer /> */}
